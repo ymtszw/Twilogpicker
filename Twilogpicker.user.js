@@ -2,7 +2,7 @@
 // @name         Twilogpicker
 // @namespace    https://ymtszw.cc
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=twitter.com
-// @version      0.1.4
+// @version      0.1.5
 // @description  Pick Twilogs from Tweetdeck and store.
 // @author       Gada / ymtszw
 // @copyright    2023, Gada / ymtszw (https://ymtszw.cc)
@@ -44,8 +44,7 @@ log("スクリプト読み込み成功");
 const highlighter = document.createElement("style");
 highlighter.textContent = `
 .twilogpicker-timeline {
-  border: 4px solid white;
-  transition: all 0.5s ease-in-out;
+  box-shadow: 0px 0px 5px 10px white inset;
 }
 `;
 document.head.appendChild(highlighter);
