@@ -48,7 +48,7 @@ window.setInterval(main, 30_000);
 //
 
 function log() {
-  console.log("[👹KBS]", ...arguments);
+  console.log("[👹TLP]", ...arguments);
 }
 
 /**
