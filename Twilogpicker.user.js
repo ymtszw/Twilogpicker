@@ -2,7 +2,7 @@
 // @name         Twilogpicker
 // @namespace    https://ymtszw.cc
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=twitter.com
-// @version      0.1.3
+// @version      0.1.4
 // @description  Pick Twilogs from Tweetdeck and store.
 // @author       Gada / ymtszw
 // @copyright    2023, Gada / ymtszw (https://ymtszw.cc)
@@ -67,6 +67,7 @@ async function main() {
 
   timeline.classList.add("twilogpicker-timeline");
   setTimeout(() => {
+    const timeline = document.querySelector(".twilogpicker-timeline");
     timeline.classList.remove("twilogpicker-timeline");
   }, 2_000);
 }
