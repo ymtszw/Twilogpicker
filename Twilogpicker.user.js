@@ -26,6 +26,10 @@
 // メイン処理
 //
 
+//
+// 起動処理部分
+//
+
 // Tampermonkey UIでストレージタブを出現させるため、固定値をセットする。
 GM_setValue("STORAGE_INITIALIZED", true);
 
@@ -37,8 +41,32 @@ const LOCAL_STORAGE_KEY = "___my_twilogs___";
 
 log("スクリプト読み込み成功");
 
+const highlighter = document.createElement("style");
+highlighter.textContent = `
+.twilogpicker-timeline {
+  border: 4px solid white;
+  transition: all 0.5s ease-in-out;
+}
+`;
+document.head.appendChild(highlighter);
+
+//
+// 繰り返し部分
+//
 function main() {
   log("繰り返し", new Date().toLocaleString());
+
+  const selectorForMyTwilogs =
+    'section[role="region"]:has(nav[role="navigation"] a[href="https://twitter.com/gada_twt"][aria-selected="true"]) *:has(> [data-testid="cellInnerDiv"])';
+  const timeline = document.querySelector(selectorForMyTwilogs);
+
+  if (!timeline) {
+    log("タイムライン非表示中");
+    return;
+  }
+
+  timeline.classList.add("twilogpicker-timeline");
+  timeline.insertBefore();
 }
 
 window.setInterval(main, 30_000);
